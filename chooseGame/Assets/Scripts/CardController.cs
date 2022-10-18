@@ -7,11 +7,12 @@ public class CardController : MonoBehaviour
 {
     public Button botao1;
     public CardData[] cardList;
-    private Card cardsave;
     [SerializeField] private GameObject prefabcard;
+    
     // Start is called before the first frame update
     void Start()
     {
+        OnSpawnPrefab();
         botao1.onClick = new Button.ButtonClickedEvent();
         botao1.onClick.AddListener(() => OnSpawnPrefab());
     }
@@ -21,21 +22,15 @@ public class CardController : MonoBehaviour
     {
         
     }
-    //retorna uma nova carta aleatória
-    public CardData NewCard()
-    {
-
-        int randomNumber = Random.Range(0, cardList.Length);
-        
-        return cardList[randomNumber];
-        
-    }
+    
     public void OnSpawnPrefab()
     {
-        
-        GameObject newCard = Instantiate(prefabcard, new Vector2(prefabcard.transform.position.x, prefabcard.transform.position.y), Quaternion.identity) as GameObject;
+        int randomnumb = Random.Range(0, cardList.Length);
 
+        GameObject newCard = Instantiate(prefabcard, new Vector2(prefabcard.transform.position.x, prefabcard.transform.position.y), Quaternion.identity) as GameObject;
         newCard.transform.SetParent(GameObject.Find("Canvas Cartas").transform, false);
-        
+        newCard.GetComponent<Card>().ShowCards(cardList[randomnumb].main_text, cardList[randomnumb].sprite_personagem);
     }
+    
+    
 }

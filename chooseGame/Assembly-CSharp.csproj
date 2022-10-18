@@ -95,6 +95,12 @@
     <Compile Include="Assets\Scripts\CardSpawn.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\CardController.cs" />
+    <Compile Include="Assets\Scripts\GameLogic.cs" />
+    <Compile Include="Assets\CardLogic.cs" />
+    <Compile Include="Assets\Scripts\Script Swipe\SwipeEffect.cs" />
+    <Compile Include="Assets\Scripts\Script Swipe\Instatiator.cs" />
+    <Compile Include="Assets\Scripts\Script Swipe\SecondCard.cs" />
+    <Compile Include="Assets\Scripts\CardSecong.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
